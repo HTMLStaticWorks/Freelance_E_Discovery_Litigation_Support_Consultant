@@ -110,7 +110,7 @@
         .status-success { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
         .status-warning { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
 
-        @media (max-width: 992px) {
+        .admin-profile { display: flex; align-items: center; gap: 12px; padding: 5px 8px; border-radius: 30px; background: rgba(37, 99, 235, 0.05); border: 1px solid var(--border); cursor: pointer; transition: var(--transition); } .admin-profile:hover { background: rgba(37, 99, 235, 0.1); border-color: var(--accent); } .admin-info { text-align: right; line-height: 1.2; } .admin-name { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-primary); } .admin-role { display: block; font-size: 0.7rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px; } .admin-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; } @media (max-width: 576px) { .admin-info { display: none; } } @media (max-width: 1024px) {
             .dashboard-sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
@@ -118,8 +118,7 @@
             .dashboard-sidebar.active {
                 transform: translateX(0);
             }
-            .dashboard-content {
-                margin-left: 0;
+            .dashboard-content { margin-left: 0; padding: 20px; width: 100%; overflow-x: hidden;
             }
         }
     </style>
@@ -132,7 +131,7 @@
             <i class="ri-shield-check-line"></i> Lex<span>Support</span>
         </a>
         <div class="nav-actions">
-            <div class="mobile-toggle" id="dashboard-sidebar-toggle">
+            <div class="admin-profile"><div class="admin-info"><span class="admin-name">Admin User</span><span class="admin-role">Firm Manager</span></div><div class="admin-avatar"><i class="ri-user-settings-line"></i></div></div><div class="mobile-toggle" id="dashboard-sidebar-toggle">
                 <i class="ri-menu-line"></i>
             </div>
         </div>
@@ -153,14 +152,16 @@
 
         <!-- Main Content -->
         <main class="dashboard-content">
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-4 mb-5">
-                <div>
+            <div class="row align-items-center g-4 mb-5">
+                <div class="col-md-auto">
                     <span class="hero-tag">Culling & Analysis</span>
                     <h2 class="mb-0">Search Term Analysis</h2>
                 </div>
-                <div class="d-flex gap-2">
-                    <button class="btn btn-outline d-flex align-items-center gap-2"><i class="ri-download-line"></i> Export CSV</button>
-                    <button class="btn btn-primary d-flex align-items-center gap-2"><i class="ri-add-line"></i> Add New Term</button>
+                <div class="col-md-auto ms-auto">
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline d-flex align-items-center gap-2"><i class="ri-download-line"></i> Export CSV</button>
+                        <button class="btn btn-primary d-flex align-items-center gap-2"><i class="ri-add-line"></i> Add New Term</button>
+                    </div>
                 </div>
             </div>
 
@@ -170,7 +171,7 @@
                     <h4 class="mb-0">Global Term Index</h4>
                     <p style="font-size: 0.9rem; color: var(--secondary);">Showing hits across 1.2M documents</p>
                 </div>
-                <table class="data-table">
+                <div style="overflow-x: auto;"><table class="data-table">
                     <thead>
                         <tr>
                             <th>Term / Keyword</th>
@@ -217,7 +218,7 @@
                             <td><span class="status-badge status-success">Flagged</span></td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
             </section>
         </main>
     </div>
@@ -236,5 +237,13 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
