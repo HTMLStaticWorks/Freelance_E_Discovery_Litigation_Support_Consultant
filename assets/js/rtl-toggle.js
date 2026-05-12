@@ -1,9 +1,11 @@
-document.getElementById('rtl-toggle').addEventListener('click', () => {
-    const isRtl = document.documentElement.dir === 'rtl';
-    document.documentElement.dir = isRtl ? 'ltr' : 'rtl';
-    localStorage.setItem('rtl', !isRtl);
+(function() {
+    const rtlToggles = document.querySelectorAll('.js-rtl-toggle');
     
-    // Update tooltip or state if needed
-    const icon = document.querySelector('#rtl-toggle i');
-    // You can swap icons here if desired
-});
+    rtlToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isRtl = document.documentElement.dir === 'rtl';
+            document.documentElement.dir = isRtl ? 'ltr' : 'rtl';
+            localStorage.setItem('rtl', !isRtl);
+        });
+    });
+})();

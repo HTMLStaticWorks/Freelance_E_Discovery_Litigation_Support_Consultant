@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <title>Secure Login | LexSupport</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
@@ -24,12 +25,7 @@
 <body
     style="height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--background); position: relative;">
     <div class="auth-actions" style="position: absolute; top: 20px; right: 20px; display: flex; gap: 10px;">
-        <button id="theme-toggle" class="theme-toggle">
-            <i class="ri-moon-line"></i>
-        </button>
-        <button id="rtl-toggle" class="theme-toggle" title="Toggle RTL">
-            <span style="font-size: 0.7rem; font-weight: 800;">RTL</span>
-        </button>
+        <button class="theme-toggle js-theme-toggle"><i class="ri-moon-line"></i></button><button class="theme-toggle js-rtl-toggle" title="Toggle RTL"><span style="font-size: 0.7rem; font-weight: 800;">RTL</span></button>
     </div>
     <div style="width: 100%; max-width: 400px; padding: 20px;">
         <div style="text-align: center; margin-bottom: 40px;">
@@ -97,3 +93,10 @@
 </body>
 
 </html>
+
+
+
+
+
+
+

@@ -11,9 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.className = 'ri-close-line';
             } else {
                 icon.className = 'ri-menu-line';
+                // Close all dropdowns when menu closes
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
             }
         });
     }
+
+    // Dropdown toggle for mobile
+    document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                const parent = dropdownToggle.parentElement;
+                parent.classList.toggle('active');
+            }
+        });
+    });
 
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

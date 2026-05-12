@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <title>404 - Page Not Found | LexSupport</title>
+    <title>Forensic Collection | Service Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -30,7 +30,7 @@
                     <a href="home-2.html" class="dropdown-item">Workflow Focus</a>
                 </div>
             </li>
-            <li><a href="services.html" class="nav-item">Services</a></li>
+            <li><a href="services.html" class="nav-item active">Services</a></li>
             <li><a href="methodology.html" class="nav-item">Methodology</a></li>
             <li><a href="early-case-assessment.html" class="nav-item">ECA</a></li>
             <li><a href="case-studies.html" class="nav-item">Case Studies</a></li>
@@ -47,13 +47,51 @@
         </div>
     </nav>
 
-    <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--background); text-align: center; width: 100%;">
-    <div style="max-width: 500px; padding: 20px;">
-        <h1 style="font-size: 8rem; color: var(--accent); opacity: 0.2; margin-bottom: 0;">404</h1>
-        <h2 style="margin-top: -30px; margin-bottom: 20px;">Resource Not Found</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 40px;">The document or page you are looking for has been moved or archived. Please verify the URL and try again.</p>
-        <a href="index.html" class="btn btn-primary">Return to Dashboard</a>
-    </div>
+    <section style="padding-top: 140px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <img src="assets/images/forensic.png" alt="Forensic Collection" style="border-radius: 12px; margin-bottom: 40px; width: 100%; max-height: 350px; object-fit: cover;">
+                    <h1>Forensic Collection</h1>
+                    <p class="lead" style="margin-bottom: 30px; color: var(--text-secondary);">Legally defensible collection of data from mobile devices, cloud storage, and legacy systems with strict chain of custody.</p>
+                    
+                    <div class="service-description" style="line-height: 1.8; color: var(--text-secondary);">
+                        <p>Our forensic experts utilize industry-standard tools and methodologies to identify, preserve, and collect electronic evidence in a manner that is admissible in any court of law. We understand that the integrity of the data is the foundation of any case.</p>
+                        
+                        <h3 style="margin-top: 40px; color: var(--text-primary);">Forensic Capabilities</h3>
+                        <div class="row g-4 style='margin-top: 20px;'>
+                            <div class="col-md-6">
+                                <div style="padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px;">
+                                    <h5 style="color: var(--accent);"><i class="ri-smartphone-line"></i> Mobile Forensics</h5>
+                                    <p style="font-size: 0.9rem; margin-top: 10px;">Forensically sound imaging of iOS and Android devices, including deleted message recovery.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div style="padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px;">
+                                    <h5 style="color: var(--accent);"><i class="ri-cloud-line"></i> Cloud Collections</h5>
+                                    <p style="font-size: 0.9rem; margin-top: 10px;">Direct collection from O365, Google Workspace, Slack, and other enterprise cloud platforms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="margin-top: 30px;">Every collection is accompanied by a detailed chain of custody log and a forensic collection report, providing the technical evidence required to validate the source and integrity of the data.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 30px; position: sticky; top: 120px;">
+                        <h4>Forensic Request</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px;">Need immediate forensic preservation? Contact our lab.</p>
+                        <form>
+                            <input type="text" placeholder="Full Name" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 15px; background: var(--background); color: var(--text-primary);">
+                            <input type="text" placeholder="Company/Law Firm" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 15px; background: var(--background); color: var(--text-primary);">
+                            <button class="btn btn-primary" style="width: 100%;">Contact Lab</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -73,7 +111,7 @@
                     <h4>Services</h4>
                     <ul>
                         <li><a href="early-case-assessment.html">Early Case Assessment</a></li>
-                        <li><a href="services.html">Document Processing</a></li>
+                        <li><a href="service-forensic.html">Forensic Collection</a></li>
                         <li><a href="service-details.html">Secure Hosting</a></li>
                         <li><a href="methodology.html">Legal Workflow</a></li>
                     </ul>
@@ -106,7 +144,6 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/rtl-toggle.js"></script>
 </body>
