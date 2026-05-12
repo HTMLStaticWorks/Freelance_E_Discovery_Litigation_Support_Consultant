@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Metadata in Cross-Border Lit | LexSupport Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');
+        if (localStorage.getItem('rtl') === 'true') document.documentElement.dir = 'rtl';
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo brand-logo">
+            <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+        </a>
+        
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="nav-item">Home <i class="ri-arrow-down-s-line"></i></a>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Enterprise View</a>
+                    <a href="home-2.html" class="dropdown-item">Workflow Focus</a>
+                </div>
+            </li>
+            <li><a href="services.html" class="nav-item">Services</a></li>
+            <li><a href="methodology.html" class="nav-item">Methodology</a></li>
+            <li><a href="early-case-assessment.html" class="nav-item">ECA</a></li>
+            <li><a href="case-studies.html" class="nav-item">Case Studies</a></li>
+            <li><a href="blog.html" class="nav-item active">Blog</a></li>
+            <li><a href="contact.html" class="nav-item">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="ri-moon-line"></i>
+            </button>
+            <button id="rtl-toggle" class="theme-toggle" title="Toggle RTL">
+                <span style="font-size: 0.7rem; font-weight: 800;">RTL</span>
+            </button>
+            <a href="signup.html" class="btn btn-primary">Signup</a>
+            <div class="mobile-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding-top: 140px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <span class="hero-tag">Security & Global Compliance</span>
+                    <h1 style="margin-top: 20px; font-size: 3rem;">A Guide In Protecting Metadata in Cross-Border Lit</h1>
+                    <div style="display: flex; align-items: center; gap: 15px; margin: 30px 0;">
+                        <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">MC</div>
+                        <div>
+                            <p style="margin: 0; font-weight: 700;">Marcus Chen</p>
+                            <p style="margin: 0; font-size: 0.8rem; color: var(--secondary);">Compliance Lead</p>
+                        </div>
+                    </div>
+                    <img src="assets/images/hosting.png" alt="Metadata Security" style="width: 100%; border-radius: 12px; margin-bottom: 40px;">
+                    
+                    <div class="blog-content" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                        <p>Cross-border litigation presents a unique set of challenges, particularly when it comes to the preservation and transfer of metadata. With the advent of GDPR and CCPA, the "blind transfer" of data is no longer permissible.</p>
+                        
+                        <p>Metadata—data about data—often contains highly sensitive personal information, from email addresses to IP addresses and geolocation data. Protecting this during the discovery lifecycle requires a robust redaction and anonymization strategy.</p>
+                        
+                        <h3 style="margin-top: 40px; color: var(--text-primary);">The Principle of Minimization</h3>
+                        <p>Data minimization is the cornerstone of cross-border compliance. Legal teams must only collect and process the specific metadata fields necessary for the case. Excess data should be culled at the source, before it ever leaves the jurisdiction of origin.</p>
+
+                        <p>Furthermore, secure hosting environments must utilize region-specific data centers to ensure that data remains within the appropriate legal boundaries while still being accessible to the global legal team.</p>
+                    </div>
+
+                    <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">
+                        <a href="blog.html" style="color: var(--accent); font-weight: 700;"><i class="ri-arrow-left-line"></i> Back to Insights</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo brand-logo">
+                        <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+                    </a>
+                    <p>Enterprise-grade e-discovery consulting for high-stakes litigation. We bring technical credibility to the legal workflow.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="early-case-assessment.html">Early Case Assessment</a></li>
+                        <li><a href="services.html">Document Processing</a></li>
+                        <li><a href="service-details.html">Secure Hosting</a></li>
+                        <li><a href="methodology.html">Legal Workflow</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="blog.html">Industry News</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated on legal-tech trends.</p>
+                    <form class="newsletter-form" style="margin-top: 20px;">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LexSupport Consulting. All rights reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+</body>
+</html>

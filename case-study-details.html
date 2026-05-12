@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study Details | LexSupport</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');
+        if (localStorage.getItem('rtl') === 'true') document.documentElement.dir = 'rtl';
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo brand-logo">
+            <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+        </a>
+        
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="nav-item">Home <i class="ri-arrow-down-s-line"></i></a>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Enterprise View</a>
+                    <a href="home-2.html" class="dropdown-item">Workflow Focus</a>
+                </div>
+            </li>
+            <li><a href="services.html" class="nav-item">Services</a></li>
+            <li><a href="methodology.html" class="nav-item">Methodology</a></li>
+            <li><a href="early-case-assessment.html" class="nav-item">ECA</a></li>
+            <li><a href="case-studies.html" class="nav-item active">Case Studies</a></li>
+            <li><a href="blog.html" class="nav-item">Blog</a></li>
+            <li><a href="contact.html" class="nav-item">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="ri-moon-line"></i>
+            </button>
+            <button id="rtl-toggle" class="theme-toggle" title="Toggle RTL">
+                <span style="font-size: 0.7rem; font-weight: 800;">RTL</span>
+            </button>
+            <a href="signup.html" class="btn btn-primary">Signup</a>
+            <div class="mobile-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding-top: 140px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <span class="hero-tag">Intellectual Property</span>
+                    <h1 style="font-size: 3rem; margin-bottom: 30px;">Defensible Collection of Legacy Systems</h1>
+                    <img src="assets/images/hero.png" alt="Case Detail" style="width: 100%; border-radius: 12px; margin-bottom: 40px;">
+                    
+                    <div class="row mb-5">
+                        <div class="col-md-4">
+                            <h5 style="color: var(--secondary); text-transform: uppercase; font-size: 0.8rem;">Client</h5>
+                            <p>Am Law 100 Firm</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="color: var(--secondary); text-transform: uppercase; font-size: 0.8rem;">Sector</h5>
+                            <p>Pharmaceuticals</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="color: var(--secondary); text-transform: uppercase; font-size: 0.8rem;">Outcome</h5>
+                            <p>100% Defensible</p>
+                        </div>
+                    </div>
+
+                    <h3>The Challenge</h3>
+                    <p>The client faced an IP dispute requiring access to email archives from 2008, stored on magnetic tapes and a legacy Exchange server that had not been powered on in a decade.</p>
+                    
+                    <h3 style="margin-top: 40px;">Our Approach</h3>
+                    <p>We deployed a forensic team to the client's off-site storage facility, established a clean-room environment, and successfully imaged the legacy drives using write-blocking technology.</p>
+                    
+                    <blockquote style="border-left: 4px solid var(--accent); padding: 20px; background: var(--background); margin: 40px 0; border-radius: 0 8px 8px 0;">
+                        "LexSupport's ability to handle archaic systems with modern forensic precision was the turning point in our discovery phase."
+                        <footer style="background:none; padding:0; margin-top:10px; color: var(--secondary); font-size: 0.9rem;">— Lead Litigation Counsel</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo brand-logo">
+                        <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+                    </a>
+                    <p>Enterprise-grade e-discovery consulting for high-stakes litigation. We bring technical credibility to the legal workflow.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="early-case-assessment.html">Early Case Assessment</a></li>
+                        <li><a href="services.html">Document Processing</a></li>
+                        <li><a href="service-details.html">Secure Hosting</a></li>
+                        <li><a href="methodology.html">Legal Workflow</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="blog.html">Industry News</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated on legal-tech trends.</p>
+                    <form class="newsletter-form" style="margin-top: 20px;">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LexSupport Consulting. All rights reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+</body>
+</html>

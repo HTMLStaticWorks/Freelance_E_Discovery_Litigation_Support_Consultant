@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Firm Dashboard | LexSupport Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') document.documentElement.classList.add('dark-mode');
+            if (localStorage.getItem('rtl') === 'true') document.documentElement.dir = 'rtl';
+        })();
+    </script>
+    <style>
+        /* Local dashboard styles for immediate implementation */
+        .dashboard-layout {
+            display: flex;
+            min-height: 100vh;
+            padding-top: var(--header-height);
+        }
+        .dashboard-sidebar {
+            width: 280px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            padding: 30px;
+            position: fixed;
+            height: calc(100vh - var(--header-height));
+            overflow-y: auto;
+            z-index: 10;
+        }
+        .dashboard-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 40px;
+            background: var(--background);
+        }
+        .sidebar-nav li {
+            margin-bottom: 5px;
+        }
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(37, 99, 235, 0.05);
+            color: var(--accent);
+        }
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .progress-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .data-table th {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .data-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .status-success { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+        .status-warning { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+        
+        .upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            background: var(--surface);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .upload-zone:hover {
+            border-color: var(--accent);
+            background: rgba(37, 99, 235, 0.02);
+        }
+
+        @media (max-width: 992px) {
+            .dashboard-sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            .dashboard-sidebar.active {
+                transform: translateX(0);
+            }
+            .dashboard-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo brand-logo">
+            <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+        </a>
+        
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="nav-item">Home <i class="ri-arrow-down-s-line"></i></a>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Enterprise View</a>
+                    <a href="home-2.html" class="dropdown-item">Workflow Focus</a>
+                </div>
+            </li>
+            <li><a href="services.html" class="nav-item">Services</a></li>
+            <li><a href="methodology.html" class="nav-item">Methodology</a></li>
+            <li><a href="early-case-assessment.html" class="nav-item">ECA</a></li>
+            <li><a href="case-studies.html" class="nav-item">Case Studies</a></li>
+            <li><a href="blog.html" class="nav-item">Blog</a></li>
+            <li><a href="contact.html" class="nav-item">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-item active">Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="ri-moon-line"></i>
+            </button>
+            <button id="rtl-toggle" class="theme-toggle" title="Toggle RTL">
+                <span style="font-size: 0.7rem; font-weight: 800;">RTL</span>
+            </button>
+            <a href="signup.html" class="btn btn-primary">Signup</a>
+            <div class="mobile-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#overview" class="sidebar-link active"><i class="ri-dashboard-3-line"></i> Overview</a></li>
+                <li><a href="#custodial" class="sidebar-link"><i class="ri-folder-upload-line"></i> Custodial Data</a></li>
+                <li><a href="#search" class="sidebar-link"><i class="ri-search-eye-line"></i> Search Terms</a></li>
+                <li><a href="#review" class="sidebar-link"><i class="ri-task-line"></i> Review Progress</a></li>
+                <li><a href="#production" class="sidebar-link"><i class="ri-file-shield-2-line"></i> Production Sets</a></li>
+                <li style="margin-top: 30px;"><span style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase; padding: 0 16px;">Active Cases</span></li>
+                <li><a href="#" class="sidebar-link"><i class="ri-git-repository-line"></i> Smith v. TechCorp</a></li>
+                <li><a href="#" class="sidebar-link"><i class="ri-git-repository-line"></i> Global Logistics IP</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div id="overview">
+                <div class="d-flex justify-content-between align-items-end mb-4">
+                    <div>
+                        <span class="hero-tag">Welcome Back</span>
+                        <h2 class="mb-0">Case Management Portal</h2>
+                    </div>
+                    <div class="btn btn-primary btn-sm"><i class="ri-add-line"></i> New Discovery Project</div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="row g-4 mb-5">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <span style="color: var(--secondary); font-size: 0.9rem;">Total Data Volume</span>
+                            <h3 class="my-2">4.2 TB</h3>
+                            <span style="color: #22c55e; font-size: 0.85rem;"><i class="ri-arrow-up-line"></i> 12% this month</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <span style="color: var(--secondary); font-size: 0.9rem;">Custodians Identified</span>
+                            <h3 class="my-2">156</h3>
+                            <span style="color: var(--secondary); font-size: 0.85rem;">Across 4 active cases</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <span style="color: var(--secondary); font-size: 0.9rem;">Review Progress</span>
+                            <h3 class="my-2">68%</h3>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 68%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <span style="color: var(--secondary); font-size: 0.9rem;">Security Status</span>
+                            <h3 class="my-2">Encrypted</h3>
+                            <span class="status-badge status-success">All Systems Nominal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Section -->
+                <section id="custodial" class="mb-5">
+                    <h4 class="mb-4">Upload Custodial Data</h4>
+                    <div class="upload-zone">
+                        <i class="ri-cloud-upload-line" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px; display: block;"></i>
+                        <h5>Drag and drop forensic images or archives</h5>
+                        <p style="color: var(--secondary);">Supported formats: .L01, .E01, .ZIP, .PST (Max 50GB per file)</p>
+                        <button class="btn btn-outline mt-3">Select Files</button>
+                    </div>
+                </section>
+
+                <div class="row g-4">
+                    <!-- Search Terms Section -->
+                    <div class="col-lg-7">
+                        <section id="search" class="stat-card" style="height: 100%;">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h4 class="mb-0">Search Term Analysis</h4>
+                                <a href="#" style="font-size: 0.9rem; color: var(--accent);">Detailed Report</a>
+                            </div>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Term / Keyword</th>
+                                        <th>Hit Count</th>
+                                        <th>Uniqueness</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>"confidential"</td>
+                                        <td>12,450</td>
+                                        <td>45%</td>
+                                        <td><span class="status-badge status-success">Indexed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>"contract agreement"</td>
+                                        <td>3,120</td>
+                                        <td>82%</td>
+                                        <td><span class="status-badge status-success">Indexed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>"project delta"</td>
+                                        <td>842</td>
+                                        <td>98%</td>
+                                        <td><span class="status-badge status-warning">Processing</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+
+                    <!-- Production Section -->
+                    <div class="col-lg-5">
+                        <section id="production" class="stat-card" style="height: 100%;">
+                            <h4 class="mb-4">Recent Production Sets</h4>
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div style="padding: 15px; background: var(--background); border-radius: 8px; border: 1px solid var(--border);">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="mb-1">PROD_001_SMITH_TECH</h6>
+                                            <p style="font-size: 0.8rem; color: var(--secondary);">Created: May 10, 2024 • 1.2 GB</p>
+                                        </div>
+                                        <i class="ri-download-2-line" style="color: var(--accent); cursor: pointer; font-size: 1.2rem;"></i>
+                                    </div>
+                                </div>
+                                <div style="padding: 15px; background: var(--background); border-radius: 8px; border: 1px solid var(--border);">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="mb-1">PROD_002_LOGISTICS_IP</h6>
+                                            <p style="font-size: 0.8rem; color: var(--secondary);">Created: May 08, 2024 • 450 MB</p>
+                                        </div>
+                                        <i class="ri-download-2-line" style="color: var(--accent); cursor: pointer; font-size: 1.2rem;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-4">Generate New Production</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+    <script>
+        // Simple sidebar active state toggle
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

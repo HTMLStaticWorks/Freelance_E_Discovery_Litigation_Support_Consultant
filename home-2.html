@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Solutions | E-Discovery Litigation Support</title>
+    <!-- Fonts, Icons, CSS same as index.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');
+        if (localStorage.getItem('rtl') === 'true') document.documentElement.dir = 'rtl';
+    </script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo brand-logo">
+            <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+        </a>
+
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="nav-item active">Home <i class="ri-arrow-down-s-line"></i></a>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Enterprise View</a>
+                    <a href="home-2.html" class="dropdown-item">Workflow Focus</a>
+                </div>
+            </li>
+            <li><a href="services.html" class="nav-item">Services</a></li>
+            <li><a href="methodology.html" class="nav-item">Methodology</a></li>
+            <li><a href="early-case-assessment.html" class="nav-item">ECA</a></li>
+            <li><a href="case-studies.html" class="nav-item">Case Studies</a></li>
+            <li><a href="blog.html" class="nav-item">Blog</a></li>
+            <li><a href="contact.html" class="nav-item">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="ri-moon-line"></i>
+            </button>
+            <button id="rtl-toggle" class="theme-toggle" title="Toggle RTL">
+                <span style="font-size: 0.7rem; font-weight: 800;">RTL</span>
+            </button>
+            <a href="signup.html" class="btn btn-primary">Signup</a>
+            <div class="mobile-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-tag">System Intelligence</span>
+                    <h1>Operational Excellence in Legal Data Management</h1>
+                    <p>Integrating advanced analytics with proven legal methodologies to streamline your discovery
+                        process and reduce technical overhead.</p>
+                    <div class="hero-cta">
+                        <a href="signup.html" class="btn btn-primary">Get Started</a>
+                        <a href="dashboard.html" class="btn btn-outline">View Dashboard</a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div
+                        style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
+                        <div
+                            style="height: 40px; background: var(--background); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 15px; gap: 6px;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></div>
+                            <span
+                                style="margin-left: 15px; font-size: 0.7rem; color: var(--text-secondary); opacity: 0.5; font-family: monospace;">discovery-dashboard-v4.0.exe</span>
+                        </div>
+                        <img src="assets/images/dashboard-ui.png" alt="Legal Analytics Dashboard"
+                            style="width: 100%; display: block;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section style="border-top: 1px solid var(--border); padding: 60px 0;">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <h2 style="font-size: 3rem; color: var(--accent);">500+</h2>
+                    <p>Cases Managed</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 style="font-size: 3rem; color: var(--accent);">20PB+</h2>
+                    <p>Data Processed</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 style="font-size: 3rem; color: var(--accent);">99.9%</h2>
+                    <p>System Uptime</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 style="font-size: 3rem; color: var(--accent);">24/7</h2>
+                    <p>Expert Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Features -->
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <span class="hero-tag">Core Features</span>
+                <h2 style="font-size: 2.5rem;">Smarter Legal Analytics</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card" style="height: 100%;">
+                        <i class="ri-radar-line" style="font-size: 2.5rem; color: var(--accent);"></i>
+                        <h4 style="margin: 20px 0;">Predictive Coding</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Machine learning algorithms that
+                            prioritize relevant documents, reducing review costs by up to 70%.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card" style="height: 100%;">
+                        <i class="ri-shield-flash-line" style="font-size: 2.5rem; color: var(--accent);"></i>
+                        <h4 style="margin: 20px 0;">Automated Redaction</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Pattern-based identification and
+                            redaction of PII and privileged material across large datasets.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card" style="height: 100%;">
+                        <i class="ri-global-line" style="font-size: 2.5rem; color: var(--accent);"></i>
+                        <h4 style="margin: 20px 0;">Cross-Border ECA</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Global data processing capabilities
+                            that respect local data privacy laws including GDPR and CCPA.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="padding: 100px 0; background: var(--surface);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <span class="hero-tag">Success Stories</span>
+                <h2 style="font-size: 2.5rem;">Trusted by Legal Leaders</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div
+                        style="background: var(--background); padding: 40px; border-radius: 16px; border: 1px solid var(--border); height: 100%;">
+                        <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--accent); opacity: 0.2;"></i>
+                        <p style="font-size: 1.1rem; margin: 20px 0; line-height: 1.6;">"The speed and accuracy of
+                            LexSupport's ECA platform allowed us to settle a major class action months ahead of
+                            schedule."</p>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-top: 30px;">
+                            <div
+                                style="width: 45px; height: 45px; background: var(--surface); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);">
+                                SJ</div>
+                            <div>
+                                <h6 style="margin: 0;">Sarah Jenkins</h6>
+                                <p style="font-size: 0.8rem; margin: 0; color: var(--text-secondary);">Partner, Global
+                                    Litigations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div
+                        style="background: var(--background); padding: 40px; border-radius: 16px; border: 1px solid var(--border); height: 100%;">
+                        <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--accent); opacity: 0.2;"></i>
+                        <p style="font-size: 1.1rem; margin: 20px 0; line-height: 1.6;">"Their technical consultants are
+                            the best in the business. They turn raw data into actionable intelligence with unmatched
+                            precision."</p>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-top: 30px;">
+                            <div
+                                style="width: 45px; height: 45px; background: var(--surface); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent);">
+                                MC</div>
+                            <div>
+                                <h6 style="margin: 0;">Michael Chen</h6>
+                                <p style="font-size: 0.8rem; margin: 0; color: var(--text-secondary);">GC, Fortune 500
+                                    Tech Corp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="padding: 100px 0;">
+        <div class="container" style="max-width: 850px;">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <span class="hero-tag" style="background: rgba(37, 99, 235, 0.1); color: var(--accent);">FAQ</span>
+                <h2 style="font-size: 2.5rem;">Frequently Asked Questions</h2>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+                    <button
+                        style="width: 100%; padding: 25px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; color: var(--text-primary);"
+                        onclick="const content = this.nextElementSibling; content.style.display = content.style.display === 'block' ? 'none' : 'block'; this.querySelector('i').className = content.style.display === 'block' ? 'ri-subtract-line' : 'ri-add-line'">
+                        <span style="font-weight: 600; font-size: 1.1rem;">How secure is our data in your hosting
+                            environment?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div style="padding: 0 25px 25px; display: none; color: var(--text-secondary); line-height: 1.6;">
+                        Our hosting environment is SOC 2 Type II compliant, featuring AES-256 encryption at rest and in
+                        transit, multi-factor authentication, and 24/7 physical security monitoring at our data centers.
+                    </div>
+                </div>
+                <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+                    <button
+                        style="width: 100%; padding: 25px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; color: var(--text-primary);"
+                        onclick="const content = this.nextElementSibling; content.style.display = content.style.display === 'block' ? 'none' : 'block'; this.querySelector('i').className = content.style.display === 'block' ? 'ri-subtract-line' : 'ri-add-line'">
+                        <span style="font-weight: 600; font-size: 1.1rem;">Do you support mobile device forensically
+                            sound collections?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div style="padding: 0 25px 25px; display: none; color: var(--text-secondary); line-height: 1.6;">
+                        Yes, our forensic consultants use industry-leading tools like Cellebrite to perform remote and
+                        on-site collections from iOS and Android devices, preserving all metadata and strict chain of
+                        custody.
+                    </div>
+                </div>
+                <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+                    <button
+                        style="width: 100%; padding: 25px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; color: var(--text-primary);"
+                        onclick="const content = this.nextElementSibling; content.style.display = content.style.display === 'block' ? 'none' : 'block'; this.querySelector('i').className = content.style.display === 'block' ? 'ri-subtract-line' : 'ri-add-line'">
+                        <span style="font-weight: 600; font-size: 1.1rem;">Can you handle large-scale document
+                            reviews?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div style="padding: 0 25px 25px; display: none; color: var(--text-secondary); line-height: 1.6;">
+                        While we focus on technical processing and ECA, we partner with top-tier review providers and
+                        provide them with culled and promoted datasets to maximize efficiency and defensibility.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section style="padding: 100px 0; background: var(--surface); border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="hero-tag">Integrations</span>
+                    <h2 style="font-size: 2.5rem;">Seamlessly Connected Ecosystem</h2>
+                    <p style="margin: 30px 0; color: var(--text-secondary); line-height: 1.6;">Our platform integrates
+                        directly with the industry's leading tools, ensuring a smooth transition of data throughout the
+                        litigation lifecycle.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 40px;">
+                        <span
+                            style="background: var(--background); padding: 10px 22px; border-radius: 50px; border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; color: var(--secondary);">Relativity</span>
+                        <span
+                            style="background: var(--background); padding: 10px 22px; border-radius: 50px; border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; color: var(--secondary);">Microsoft
+                            365</span>
+                        <span
+                            style="background: var(--background); padding: 10px 22px; border-radius: 50px; border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; color: var(--secondary);">Slack</span>
+                        <span
+                            style="background: var(--background); padding: 10px 22px; border-radius: 50px; border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; color: var(--secondary);">Google
+                            Workspace</span>
+                        <span
+                            style="background: var(--background); padding: 10px 22px; border-radius: 50px; border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; color: var(--secondary);">Box
+                            / Dropbox</span>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div
+                            style="background: var(--background); height: 120px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; color: var(--accent); opacity: 0.7;">
+                            API</div>
+                        <div
+                            style="background: var(--background); height: 120px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; color: var(--accent); opacity: 0.7;">
+                            SFTP</div>
+                        <div
+                            style="background: var(--background); height: 120px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; color: var(--accent); opacity: 0.7;">
+                            S3</div>
+                        <div
+                            style="background: var(--background); height: 120px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; color: var(--accent); opacity: 0.7;">
+                            SQL</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo brand-logo">
+                        <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+                    </a>
+                    <p>Enterprise-grade e-discovery consulting for high-stakes litigation. We bring technical
+                        credibility to the legal workflow.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="early-case-assessment.html">Early Case Assessment</a></li>
+                        <li><a href="services.html">Document Processing</a></li>
+                        <li><a href="service-details.html">Secure Hosting</a></li>
+                        <li><a href="methodology.html">Legal Workflow</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="blog.html">Industry News</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated on legal-tech trends.</p>
+                    <form class="newsletter-form" style="margin-top: 20px;">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LexSupport Consulting. All rights reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

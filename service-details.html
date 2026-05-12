@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Hosting | Service Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode');
+        if (localStorage.getItem('rtl') === 'true') document.documentElement.dir = 'rtl';
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo brand-logo">
+            <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+        </a>
+        
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="nav-item">Home <i class="ri-arrow-down-s-line"></i></a>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="dropdown-item">Enterprise View</a>
+                    <a href="home-2.html" class="dropdown-item">Workflow Focus</a>
+                </div>
+            </li>
+            <li><a href="services.html" class="nav-item active">Services</a></li>
+            <li><a href="methodology.html" class="nav-item">Methodology</a></li>
+            <li><a href="early-case-assessment.html" class="nav-item">ECA</a></li>
+            <li><a href="case-studies.html" class="nav-item">Case Studies</a></li>
+            <li><a href="blog.html" class="nav-item">Blog</a></li>
+            <li><a href="contact.html" class="nav-item">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="ri-moon-line"></i>
+            </button>
+            <button id="rtl-toggle" class="theme-toggle" title="Toggle RTL">
+                <span style="font-size: 0.7rem; font-weight: 800;">RTL</span>
+            </button>
+            <a href="signup.html" class="btn btn-primary">Signup</a>
+            <div class="mobile-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding-top: 140px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <img src="assets/images/hosting.png" alt="Secure Hosting" style="border-radius: 12px; margin-bottom: 40px; width: 100%; max-height: 350px; object-fit: cover;">
+                    <h1>Secure Data Hosting & Review</h1>
+                    <p class="lead" style="margin-bottom: 30px;">Our SOC 2 Type II compliant hosting environment provides a secure, high-performance platform for document review and collaborative analysis.</p>
+                    
+                    <h3 style="margin-top: 50px; margin-bottom: 20px;">System Specifications</h3>
+                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 30px;">
+                        <div class="row text-center">
+                            <div class="col-md-4" style="border-right: 1px solid var(--border);">
+                                <i class="ri-shield-keyhole-line" style="font-size: 2rem; color: var(--accent);"></i>
+                                <h4 style="margin-top: 10px;">Encryption</h4>
+                                <p style="font-size: 0.85rem;">AES-256 Bit at Rest & In Transit</p>
+                            </div>
+                            <div class="col-md-4" style="border-right: 1px solid var(--border);">
+                                <i class="ri-server-line" style="font-size: 2rem; color: var(--accent);"></i>
+                                <h4 style="margin-top: 10px;">Availability</h4>
+                                <p style="font-size: 0.85rem;">99.99% Redundant Uptime</p>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="ri-fingerprint-line" style="font-size: 2rem; color: var(--accent);"></i>
+                                <h4 style="margin-top: 10px;">Access</h4>
+                                <p style="font-size: 0.85rem;">MFA & IP-Restricted Login</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 30px; position: sticky; top: 120px;">
+                        <h4>Service Inquiry</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px;">Request a quote for secure data hosting.</p>
+                        <form>
+                            <input type="text" placeholder="Full Name" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 15px; background: var(--background); color: var(--text-primary);">
+                            <input type="email" placeholder="Work Email" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 15px; background: var(--background); color: var(--text-primary);">
+                            <button class="btn btn-primary" style="width: 100%;">Contact Sales</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo brand-logo">
+                        <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+                    </a>
+                    <p>Enterprise-grade e-discovery consulting for high-stakes litigation. We bring technical credibility to the legal workflow.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="early-case-assessment.html">Early Case Assessment</a></li>
+                        <li><a href="services.html">Document Processing</a></li>
+                        <li><a href="service-details.html">Secure Hosting</a></li>
+                        <li><a href="methodology.html">Legal Workflow</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="blog.html">Industry News</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated on legal-tech trends.</p>
+                    <form class="newsletter-form" style="margin-top: 20px;">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LexSupport Consulting. All rights reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+</body>
+</html>
