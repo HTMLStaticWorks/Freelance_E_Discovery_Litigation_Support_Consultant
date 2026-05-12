@@ -30,11 +30,18 @@
             width: 280px;
             background: var(--surface);
             border-right: 1px solid var(--border);
-            padding: 30px;
+            padding: 30px 20px;
             position: fixed;
             height: calc(100vh - var(--header-height));
             overflow-y: auto;
             z-index: 10;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-nav {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         .dashboard-content {
             flex: 1;
@@ -54,10 +61,21 @@
             color: var(--text-secondary);
             font-weight: 500;
             transition: var(--transition);
+            text-decoration: none;
         }
         .sidebar-link:hover, .sidebar-link.active {
             background: rgba(37, 99, 235, 0.05);
             color: var(--accent);
+        }
+        .sidebar-link.logout-link {
+            margin-top: auto;
+            color: #ef4444;
+            border: 1px solid transparent;
+        }
+        .sidebar-link.logout-link:hover {
+            background: rgba(239, 68, 68, 0.05);
+            border-color: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
         }
         .stat-card {
             background: var(--surface);
@@ -141,27 +159,9 @@
             <i class="ri-shield-check-line"></i> Lex<span>Support</span>
         </a>
         
-        <ul class="nav-links">
-            <li class="dropdown">
-                <a href="#" class="nav-item">Home <i class="ri-arrow-down-s-line"></i></a>
-                <div class="dropdown-menu">
-                    <a href="index.html" class="dropdown-item">Enterprise View</a>
-                    <a href="home-2.html" class="dropdown-item">Workflow Focus</a>
-                </div>
-            </li>
-            <li><a href="services.html" class="nav-item">Services</a></li>
-            <li><a href="methodology.html" class="nav-item">Methodology</a></li>
-            <li><a href="early-case-assessment.html" class="nav-item">ECA</a></li>
-            <li><a href="case-studies.html" class="nav-item">Case Studies</a></li>
-            <li><a href="blog.html" class="nav-item">Blog</a></li>
-            <li><a href="contact.html" class="nav-item">Contact</a></li>
-            <li><a href="dashboard.html" class="nav-item active">Dashboard</a></li>
-        </ul>
 
         <div class="nav-actions">
-            <button class="theme-toggle js-theme-toggle"><i class="ri-moon-line"></i></button><button class="theme-toggle js-rtl-toggle" title="Toggle RTL"><span style="font-size: 0.7rem; font-weight: 800;">RTL</span></button>
-            <a href="signup.html" class="btn btn-primary">Signup</a>
-            <div class="mobile-toggle">
+            <div class="mobile-toggle" id="dashboard-sidebar-toggle">
                 <i class="ri-menu-line"></i>
             </div>
         </div>
@@ -171,26 +171,24 @@
         <!-- Sidebar -->
         <aside class="dashboard-sidebar">
             <ul class="sidebar-nav">
-                <li><a href="#overview" class="sidebar-link active"><i class="ri-dashboard-3-line"></i> Overview</a></li>
-                <li><a href="#custodial" class="sidebar-link"><i class="ri-folder-upload-line"></i> Custodial Data</a></li>
-                <li><a href="#search" class="sidebar-link"><i class="ri-search-eye-line"></i> Search Terms</a></li>
-                <li><a href="#review" class="sidebar-link"><i class="ri-task-line"></i> Review Progress</a></li>
-                <li><a href="#production" class="sidebar-link"><i class="ri-file-shield-2-line"></i> Production Sets</a></li>
-                <li style="margin-top: 30px;"><span style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase; padding: 0 16px;">Active Cases</span></li>
-                <li><a href="#" class="sidebar-link"><i class="ri-git-repository-line"></i> Smith v. TechCorp</a></li>
-                <li><a href="#" class="sidebar-link"><i class="ri-git-repository-line"></i> Global Logistics IP</a></li>
+                <li><a href="dashboard.html" class="sidebar-link active"><i class="ri-dashboard-3-line"></i> Overview</a></li>
+                <li><a href="dashboard-custodial.html" class="sidebar-link"><i class="ri-folder-upload-line"></i> Custodial Data</a></li>
+                <li><a href="dashboard-search.html" class="sidebar-link"><i class="ri-search-eye-line"></i> Search Terms</a></li>
+                <li><a href="dashboard-review.html" class="sidebar-link"><i class="ri-task-line"></i> Review Progress</a></li>
+                <li><a href="dashboard-production.html" class="sidebar-link"><i class="ri-file-shield-2-line"></i> Production Sets</a></li>
+                <li style="margin-top: auto; padding-top: 20px;"><a href="login.html" class="sidebar-link logout-link"><i class="ri-logout-box-line"></i> Logout</a></li>
             </ul>
         </aside>
 
         <!-- Main Content -->
         <main class="dashboard-content">
             <div id="overview">
-                <div class="d-flex justify-content-between align-items-end mb-4">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-4 mb-5">
                     <div>
                         <span class="hero-tag">Welcome Back</span>
                         <h2 class="mb-0">Case Management Portal</h2>
                     </div>
-                    <div class="btn btn-primary btn-sm"><i class="ri-add-line"></i> New Discovery Project</div>
+                    <div class="btn btn-primary d-flex align-items-center gap-2"><i class="ri-add-line"></i> New Discovery Project</div>
                 </div>
 
                 <!-- Stats Grid -->
@@ -225,83 +223,62 @@
                     </div>
                 </div>
 
-                <!-- Upload Section -->
-                <section id="custodial" class="mb-5">
-                    <h4 class="mb-4">Upload Custodial Data</h4>
-                    <div class="upload-zone">
-                        <i class="ri-cloud-upload-line" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px; display: block;"></i>
-                        <h5>Drag and drop forensic images or archives</h5>
-                        <p style="color: var(--secondary);">Supported formats: .L01, .E01, .ZIP, .PST (Max 50GB per file)</p>
-                        <button class="btn btn-outline mt-3">Select Files</button>
-                    </div>
-                </section>
-
+                <!-- Overview Activity -->
                 <div class="row g-4">
-                    <!-- Search Terms Section -->
-                    <div class="col-lg-7">
-                        <section id="search" class="stat-card" style="height: 100%;">
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h4 class="mb-0">Search Term Analysis</h4>
-                                <a href="#" style="font-size: 0.9rem; color: var(--accent);">Detailed Report</a>
-                            </div>
+                    <div class="col-lg-8">
+                        <section class="stat-card" style="height: 100%;">
+                            <h4 class="mb-4">Recent System Activity</h4>
                             <table class="data-table">
                                 <thead>
                                     <tr>
-                                        <th>Term / Keyword</th>
-                                        <th>Hit Count</th>
-                                        <th>Uniqueness</th>
+                                        <th>Action</th>
+                                        <th>Case Reference</th>
+                                        <th>Time</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>"confidential"</td>
-                                        <td>12,450</td>
-                                        <td>45%</td>
-                                        <td><span class="status-badge status-success">Indexed</span></td>
+                                        <td>Forensic Upload</td>
+                                        <td>Smith v. TechCorp</td>
+                                        <td>2 mins ago</td>
+                                        <td><span class="status-badge status-success">Verified</span></td>
                                     </tr>
                                     <tr>
-                                        <td>"contract agreement"</td>
-                                        <td>3,120</td>
-                                        <td>82%</td>
-                                        <td><span class="status-badge status-success">Indexed</span></td>
+                                        <td>Keyword Search</td>
+                                        <td>Global Logistics IP</td>
+                                        <td>1 hour ago</td>
+                                        <td><span class="status-badge status-success">Complete</span></td>
                                     </tr>
                                     <tr>
-                                        <td>"project delta"</td>
-                                        <td>842</td>
-                                        <td>98%</td>
-                                        <td><span class="status-badge status-warning">Processing</span></td>
+                                        <td>Production Export</td>
+                                        <td>Smith v. TechCorp</td>
+                                        <td>4 hours ago</td>
+                                        <td><span class="status-badge status-warning">In Progress</span></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </section>
                     </div>
-
-                    <!-- Production Section -->
-                    <div class="col-lg-5">
-                        <section id="production" class="stat-card" style="height: 100%;">
-                            <h4 class="mb-4">Recent Production Sets</h4>
-                            <div style="display: flex; flex-direction: column; gap: 15px;">
-                                <div style="padding: 15px; background: var(--background); border-radius: 8px; border: 1px solid var(--border);">
-                                    <div class="d-flex justify-content-between align-items-start">
-                                        <div>
-                                            <h6 class="mb-1">PROD_001_SMITH_TECH</h6>
-                                            <p style="font-size: 0.8rem; color: var(--secondary);">Created: May 10, 2024 • 1.2 GB</p>
-                                        </div>
-                                        <i class="ri-download-2-line" style="color: var(--accent); cursor: pointer; font-size: 1.2rem;"></i>
+                    <div class="col-lg-4">
+                        <section class="stat-card" style="height: 100%;">
+                            <h4 class="mb-4">Operational Status</h4>
+                            <div style="display: flex; flex-direction: column; gap: 20px;">
+                                <div class="d-flex gap-3">
+                                    <i class="ri-hard-drive-2-line" style="font-size: 1.5rem; color: var(--accent);"></i>
+                                    <div>
+                                        <h6 class="mb-1">Primary Storage</h6>
+                                        <p style="font-size: 0.8rem; color: var(--secondary);">75% Capacity Reached</p>
                                     </div>
                                 </div>
-                                <div style="padding: 15px; background: var(--background); border-radius: 8px; border: 1px solid var(--border);">
-                                    <div class="d-flex justify-content-between align-items-start">
-                                        <div>
-                                            <h6 class="mb-1">PROD_002_LOGISTICS_IP</h6>
-                                            <p style="font-size: 0.8rem; color: var(--secondary);">Created: May 08, 2024 • 450 MB</p>
-                                        </div>
-                                        <i class="ri-download-2-line" style="color: var(--accent); cursor: pointer; font-size: 1.2rem;"></i>
+                                <div class="d-flex gap-3">
+                                    <i class="ri-shield-keyhole-line" style="font-size: 1.5rem; color: var(--accent);"></i>
+                                    <div>
+                                        <h6 class="mb-1">Encryption Engine</h6>
+                                        <p style="font-size: 0.8rem; color: var(--secondary);">AES-256 Active</p>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary w-100 mt-4">Generate New Production</button>
                         </section>
                     </div>
                 </div>
@@ -313,16 +290,33 @@
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/rtl-toggle.js"></script>
     <script>
-        // Simple sidebar active state toggle
+        // Sidebar active state toggle
         document.querySelectorAll('.sidebar-link').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
+                
+                // Close sidebar on mobile after clicking a link
+                if (window.innerWidth <= 992) {
+                    document.querySelector('.dashboard-sidebar').classList.remove('active');
+                }
             });
         });
+
+        // Mobile Dashboard Sidebar Toggle
+        const dashboardToggle = document.getElementById('dashboard-sidebar-toggle');
+        const sidebar = document.querySelector('.dashboard-sidebar');
+        
+        if (dashboardToggle && sidebar) {
+            dashboardToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+        }
     </script>
 </body>
 </html>
+
+
 
 
 

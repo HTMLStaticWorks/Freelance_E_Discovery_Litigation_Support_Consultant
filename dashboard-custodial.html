@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custodial Data Management | LexSupport Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') document.documentElement.classList.add('dark-mode');
+            if (localStorage.getItem('rtl') === 'true') document.documentElement.dir = 'rtl';
+        })();
+    </script>
+    <style>
+        .dashboard-layout {
+            display: flex;
+            min-height: 100vh;
+            padding-top: var(--header-height);
+        }
+        .dashboard-sidebar {
+            width: 280px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            padding: 30px 20px;
+            position: fixed;
+            height: calc(100vh - var(--header-height));
+            overflow-y: auto;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-nav {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .dashboard-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 40px;
+            background: var(--background);
+        }
+        .sidebar-nav li {
+            margin-bottom: 5px;
+        }
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(37, 99, 235, 0.05);
+            color: var(--accent);
+        }
+        .sidebar-link.logout-link {
+            margin-top: auto;
+            color: #ef4444;
+            border: 1px solid transparent;
+        }
+        .sidebar-link.logout-link:hover {
+            background: rgba(239, 68, 68, 0.05);
+            border-color: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+        }
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 80px 40px;
+            text-align: center;
+            background: var(--surface);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .upload-zone:hover {
+            border-color: var(--accent);
+            background: rgba(37, 99, 235, 0.02);
+        }
+        .custodian-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .status-success { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+        .status-warning { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+        @media (max-width: 992px) {
+            .dashboard-sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            .dashboard-sidebar.active {
+                transform: translateX(0);
+            }
+            .dashboard-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo brand-logo">
+            <i class="ri-shield-check-line"></i> Lex<span>Support</span>
+        </a>
+        <div class="nav-actions">
+            <div class="mobile-toggle" id="dashboard-sidebar-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html" class="sidebar-link"><i class="ri-dashboard-3-line"></i> Overview</a></li>
+                <li><a href="dashboard-custodial.html" class="sidebar-link active"><i class="ri-folder-upload-line"></i> Custodial Data</a></li>
+                <li><a href="dashboard-search.html" class="sidebar-link"><i class="ri-search-eye-line"></i> Search Terms</a></li>
+                <li><a href="dashboard-review.html" class="sidebar-link"><i class="ri-task-line"></i> Review Progress</a></li>
+                <li><a href="dashboard-production.html" class="sidebar-link"><i class="ri-file-shield-2-line"></i> Production Sets</a></li>
+                <li style="margin-top: auto; padding-top: 20px;"><a href="login.html" class="sidebar-link logout-link"><i class="ri-logout-box-line"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-4 mb-5">
+                <div>
+                    <span class="hero-tag">Litigation Support</span>
+                    <h2 class="mb-0">Custodial Data Intake</h2>
+                </div>
+                <div class="btn btn-primary d-flex align-items-center gap-2"><i class="ri-add-line"></i> Register New Custodian</div>
+            </div>
+
+            <!-- Upload Section -->
+            <section class="mb-5">
+                <div class="upload-zone">
+                    <i class="ri-cloud-upload-line" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px; display: block;"></i>
+                    <h5>Upload Forensic Evidence</h5>
+                    <p style="color: var(--secondary);">Drag and drop forensic images (.E01, .L01) or encrypted archives.</p>
+                    <button class="btn btn-primary mt-3">Browse File System</button>
+                </div>
+            </section>
+
+            <!-- Active Custodians -->
+            <h4 class="mb-4">Active Data Streams</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="custodian-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h6 class="mb-1">John Smith (CFO)</h6>
+                                <p style="font-size: 0.85rem; color: var(--secondary);">NY Office • Financial Archives</p>
+                            </div>
+                            <span class="status-badge status-success">Processing</span>
+                        </div>
+                        <div style="font-size: 0.85rem; display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Data Volume: 450 GB</span>
+                            <span>85% Indexed</span>
+                        </div>
+                        <div style="height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;">
+                            <div style="width: 85%; height: 100%; background: var(--accent);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custodian-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h6 class="mb-1">Sarah Jenkins (VP Ops)</h6>
+                                <p style="font-size: 0.85rem; color: var(--secondary);">Remote • Cloud Storage</p>
+                            </div>
+                            <span class="status-badge status-warning">Awaiting Collection</span>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Collection agent scheduled for remote acquisition on May 15.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/rtl-toggle.js"></script>
+    <script>
+        // Mobile Dashboard Sidebar Toggle
+        const dashboardToggle = document.getElementById('dashboard-sidebar-toggle');
+        const sidebar = document.querySelector('.dashboard-sidebar');
+        if (dashboardToggle && sidebar) {
+            dashboardToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
+
+
