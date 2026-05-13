@@ -293,6 +293,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    width: 100%;
 }
 
 @media (max-width: 992px) {
@@ -576,6 +577,60 @@ footer {
     .section-header h2 {
         font-size: 2rem;
     }
+}
+
+/* Tablet Layout Width Fixes (768px - 1199px) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px !important;
+        width: 100% !important;
+    }
+
+    .services-grid, 
+    .blog-grid, 
+    .case-study-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Force 2 columns on tablet for common card rows */
+    @media (max-width: 1199px) {
+        .row.g-4 > [class*="col-md-4"],
+        .row.g-4 > [class*="col-md-3"],
+        .row.g-5 > [class*="col-md-4"],
+        .row.g-5 > [class*="col-md-3"] {
+            width: 50% !important;
+            flex: 0 0 50% !important;
+        }
+    }
+
+    /* Standard Desktop (1200px+) */
+    @media (min-width: 1200px) {
+        .services-grid, 
+        .blog-grid, 
+        .case-study-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+    }
+}
+
+/* Card Stretching Fixes */
+.service-card, 
+.stat-card, 
+.blog-card, 
+.case-card,
+.pricing-card,
+.dashboard-widget,
+.feature-card,
+.benefit-card,
+.process-card {
+    width: 100% !important;
+    max-width: none !important;
+    flex: 1 1 auto;
+}
+
+/* Remove centering that stops stretching */
+.row.justify-content-center {
+    justify-content: flex-start !important;
 }
 
 @media (max-width: 576px) {
