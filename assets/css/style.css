@@ -393,6 +393,10 @@ footer {
     color: var(--secondary);
 }
 
+.footer-bottom p {
+    margin-bottom: 0;
+}
+
 /* Theme Toggle */
 .theme-toggle {
     background: none;
