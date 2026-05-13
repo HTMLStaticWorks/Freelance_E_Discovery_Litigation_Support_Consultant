@@ -19,11 +19,11 @@
     </script>
 </head>
 <body
-    style="height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--background); position: relative;">
+    style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--background); position: relative; padding: 60px 0;">
     <div class="auth-actions" style="position: absolute; top: 20px; right: 20px; display: flex; gap: 10px;">
         <button class="theme-toggle js-theme-toggle"><i class="ri-moon-line"></i></button><button class="theme-toggle js-rtl-toggle" title="Toggle RTL"><span style="font-size: 0.7rem; font-weight: 800;">RTL</span></button>
     </div>
-    <div style="width: 100%; max-width: 450px; padding: 20px;">
+    <div style="width: 100%; max-width: 480px; padding: 20px;">
         <div style="text-align: center; margin-bottom: 40px;">
             <a href="index.html" class="brand-logo" style="justify-content: center;"><i class="ri-shield-check-line"></i> Lex<span>Support</span></a>
         </div>
@@ -41,11 +41,21 @@
                     </div>
                     <div class="col-md-12">
                         <label style="font-weight: 600; font-size: 0.85rem; display: block; margin-bottom: 6px;">Password</label>
-                        <input type="password" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--background); color: var(--text-primary);">
+                        <div style="position: relative;">
+                            <input type="password" class="password-toggle-input" style="width: 100%; padding: 10px; padding-right: 40px; border: 1px solid var(--border); border-radius: 6px; background: var(--background); color: var(--text-primary);">
+                            <button type="button" class="password-toggle-btn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--secondary); cursor: pointer; display: flex; align-items: center; padding: 0;">
+                                <i class="ri-eye-line" style="font-size: 1.1rem;"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="col-md-12">
                         <label style="font-weight: 600; font-size: 0.85rem; display: block; margin-bottom: 6px;">Confirm Password</label>
-                        <input type="password" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--background); color: var(--text-primary);">
+                        <div style="position: relative;">
+                            <input type="password" class="password-toggle-input" style="width: 100%; padding: 10px; padding-right: 40px; border: 1px solid var(--border); border-radius: 6px; background: var(--background); color: var(--text-primary);">
+                            <button type="button" class="password-toggle-btn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--secondary); cursor: pointer; display: flex; align-items: center; padding: 0;">
+                                <i class="ri-eye-line" style="font-size: 1.1rem;"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="col-md-12" style="margin-top: 10px;">
                         <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">
@@ -83,6 +93,17 @@
     </div>
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/rtl-toggle.js"></script>
+    <script>
+        document.querySelectorAll('.password-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const icon = this.querySelector('i');
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+                icon.className = type === 'password' ? 'ri-eye-line' : 'ri-eye-off-line';
+            });
+        });
+    </script>
 </body>
 </html>
 

@@ -283,6 +283,7 @@ section {
     border-radius: 12px;
     border: 1px solid var(--border);
     transition: var(--transition);
+    margin-bottom: 32px !important;
 }
 
 .service-card:hover {
@@ -432,6 +433,12 @@ footer {
         gap: 15px;
         align-items: center;
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-actions-mobile .btn-primary {
+        width: 100% !important;
+        margin-top: 10px;
     }
 
     .mobile-toggle {
@@ -451,13 +458,58 @@ footer {
     .dropdown.active .dropdown-menu {
         display: block;
     }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    /* Fix large inline styles for mobile */
+    header[style*="padding: 140px"] {
+        padding: 100px 0 40px !important;
+    }
+    
+    section[style*="padding: 100px"] {
+        padding: 60px 0 !important;
+    }
+
+    h1[style*="font-size: 3rem"], 
+    h1[style*="font-size: 3.5rem"],
+    h2[style*="font-size: 3rem"],
+    h2[style*="font-size: 2.5rem"],
+    .hero h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+
+    div[style*="padding: 60px"] {
+        padding: 30px !important;
+    }
+
+    div[style*="padding: 40px"] {
+        padding: 25px !important;
+    }
+
+    /* Dashboard Header Fix */
+    .dashboard-content .col-md-auto.ms-auto {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .dashboard-content .col-md-auto.ms-auto .btn {
+        width: 100% !important;
+        justify-content: center;
+    }
 }
 
 .mobile-only-actions {
     display: none;
 }
 
-.fade-up.visible, .reveal-card.visible {
+.fade-up.visible,
+.reveal-card.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -543,6 +595,10 @@ footer {
 }
 
 /* General Layout Fixes */
+.row {
+    row-gap: 30px;
+}
+
 [dir="rtl"] .ms-auto {
     margin-right: auto !important;
     margin-left: 0 !important;
@@ -559,7 +615,7 @@ footer {
     flex-wrap: wrap;
 }
 
-.services-grid > [class*="col-"] {
+.services-grid>[class*="col-"] {
     display: flex !important;
 }
 
@@ -571,7 +627,7 @@ footer {
     height: auto !important;
 }
 
-.services-grid .service-card > div:last-child {
+.services-grid .service-card>div:last-child {
     flex: 1 !important;
     display: flex !important;
     flex-direction: column !important;

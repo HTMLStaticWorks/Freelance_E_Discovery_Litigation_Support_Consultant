@@ -160,7 +160,18 @@
         
 
         <div class="nav-actions">
-            <div class="admin-profile"><div class="admin-info"><span class="admin-name">Admin User</span><span class="admin-role">Firm Manager</span></div><div class="admin-avatar"><i class="ri-user-settings-line"></i></div></div><div class="mobile-toggle" id="dashboard-sidebar-toggle">
+            <button class="theme-toggle js-theme-toggle" style="margin-right: 10px;"><i class="ri-moon-line"></i></button>
+            <button class="theme-toggle js-rtl-toggle" title="Toggle RTL" style="margin-right: 15px;"><span style="font-size: 0.7rem; font-weight: 800;">RTL</span></button>
+            <div class="admin-profile">
+                <div class="admin-info">
+                    <span class="admin-name">Admin User</span>
+                    <span class="admin-role">Firm Manager</span>
+                </div>
+                <div class="admin-avatar">
+                    <i class="ri-user-settings-line"></i>
+                </div>
+            </div>
+            <div class="mobile-toggle" id="dashboard-sidebar-toggle">
                 <i class="ri-menu-line"></i>
             </div>
         </div>
@@ -182,9 +193,13 @@
         <!-- Main Content -->
         <main class="dashboard-content">
             <div id="overview">
+                <div style="margin-bottom: 30px;">
+                    <h4 style="font-weight: 500; color: var(--secondary);">Good morning, <span style="color: var(--accent); font-weight: 700;">Admin User</span></h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Here is what's happening with your cases today.</p>
+                </div>
                 <div class="row align-items-center g-4 mb-5">
                     <div class="col-md-auto">
-                        <span class="hero-tag">Welcome Back</span>
+                        <span class="hero-tag">System Overview</span>
                         <h2 class="mb-0">Case Management Portal</h2>
                     </div>
                     <div class="col-md-auto ms-auto">

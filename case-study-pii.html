@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <title>Automated PII Redaction | Case Study</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -15,13 +18,14 @@
         if (localStorage.getItem('rtl') === 'true') document.documentElement.dir = 'rtl';
     </script>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html" class="nav-logo brand-logo">
             <i class="ri-shield-check-line"></i> Lex<span>Support</span>
         </a>
-        
+
         <ul class="nav-links">
             <li class="dropdown">
                 <a href="#" class="nav-item">Home <i class="ri-arrow-down-s-line"></i></a>
@@ -36,10 +40,19 @@
             <li><a href="case-studies.html" class="nav-item active">Case Studies</a></li>
             <li><a href="blog.html" class="nav-item">Blog</a></li>
             <li><a href="contact.html" class="nav-item">Contact</a></li>
-            <li><a href="dashboard.html" class="nav-item">Dashboard</a></li><li class="mobile-only-actions"><div class="nav-actions-mobile"><button class="theme-toggle js-theme-toggle"><i class="ri-moon-line"></i></button><button class="theme-toggle js-rtl-toggle" title="Toggle RTL"><span style="font-size: 0.7rem; font-weight: 800;">RTL</span></button><a href="signup.html" class="btn btn-primary" style="width: 100%;">Signup</a></div></li></ul>
+            <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+            <li class="mobile-only-actions">
+                <div class="nav-actions-mobile"><button class="theme-toggle js-theme-toggle"><i
+                            class="ri-moon-line"></i></button><button class="theme-toggle js-rtl-toggle"
+                        title="Toggle RTL"><span style="font-size: 0.7rem; font-weight: 800;">RTL</span></button><a
+                        href="signup.html" class="btn btn-primary" style="width: 100%;">Signup</a></div>
+            </li>
+        </ul>
 
         <div class="nav-actions">
-            <button class="theme-toggle js-theme-toggle"><i class="ri-moon-line"></i></button><button class="theme-toggle js-rtl-toggle" title="Toggle RTL"><span style="font-size: 0.7rem; font-weight: 800;">RTL</span></button>
+            <button class="theme-toggle js-theme-toggle"><i class="ri-moon-line"></i></button><button
+                class="theme-toggle js-rtl-toggle" title="Toggle RTL"><span
+                    style="font-size: 0.7rem; font-weight: 800;">RTL</span></button>
             <a href="signup.html" class="btn btn-primary">Signup</a>
             <div class="mobile-toggle">
                 <i class="ri-menu-line"></i>
@@ -53,36 +66,55 @@
                 <div class="col-lg-8 offset-lg-2">
                     <span class="hero-tag">Healthcare Litigation</span>
                     <h1 style="font-size: 3rem; margin-bottom: 30px;">Automated PII Redaction at Scale</h1>
-                    <img src="assets/images/workflow.png" alt="PII Redaction Case" style="width: 100%; border-radius: 12px; margin-bottom: 40px; max-height: 400px; object-fit: cover;">
-                    
-                    <div class="row mb-5 text-center" style="background: var(--surface); padding: 30px; border-radius: 12px; border: 1px solid var(--border);">
+                    <img src="assets/images/workflow.png" alt="PII Redaction Case"
+                        style="width: 100%; border-radius: 12px; margin-bottom: 40px; max-height: 400px; object-fit: cover;">
+
+                    <div class="row mb-5 text-center"
+                        style="background: var(--surface); padding: 30px; border-radius: 12px; border: 1px solid var(--border);">
                         <div class="col-md-4">
-                            <h5 style="color: var(--secondary); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px;">Volume</h5>
+                            <h5
+                                style="color: var(--secondary); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px;">
+                                Volume</h5>
                             <p style="font-weight: 700;">5M+ Records</p>
                         </div>
                         <div class="col-md-4">
-                            <h5 style="color: var(--secondary); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px;">Accuracy</h5>
+                            <h5
+                                style="color: var(--secondary); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px;">
+                                Accuracy</h5>
                             <p style="font-weight: 700;">99.8% Success</p>
                         </div>
                         <div class="col-md-4">
-                            <h5 style="color: var(--secondary); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px;">Timeframe</h5>
+                            <h5
+                                style="color: var(--secondary); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px;">
+                                Timeframe</h5>
                             <p style="font-weight: 700;">3 Weeks</p>
                         </div>
                     </div>
 
                     <h3>The Challenge</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.8;">A major healthcare provider was required to produce 5 million medical records for a class-action lawsuit. Each record contained highly sensitive PII and PHI (Protected Health Information) that had to be redacted according to strict HIPAA standards before production.</p>
-                    
+                    <p style="color: var(--text-secondary); line-height: 1.8;">A major healthcare provider was required
+                        to produce 5 million medical records for a class-action lawsuit. Each record contained highly
+                        sensitive PII and PHI (Protected Health Information) that had to be redacted according to strict
+                        HIPAA standards before production.</p>
+
                     <h3 style="margin-top: 40px;">Our Approach</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.8;">Manual redaction was impossible given the volume and timeline. We utilized our AI-driven redaction engine, trained on specific healthcare data patterns, to automatically identify and burn-in redactions for SSNs, medical IDs, and patient names. A secondary QC layer of human reviewers validated the high-risk outliers.</p>
-                    
-                    <blockquote style="border-left: 4px solid var(--accent); padding: 20px 30px; background: var(--surface); margin: 40px 0; border-radius: 0 8px 8px 0; font-style: italic;">
-                        "LexSupport's AI redaction tool saved us months of manual work and ensured that we remained in full compliance with HIPAA regulations during a very stressful production window."
-                        <footer style="margin-top:15px; color: var(--accent); font-weight: 700; font-style: normal; font-size: 0.9rem;">— Chief Privacy Officer</footer>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">Manual redaction was impossible given the
+                        volume and timeline. We utilized our AI-driven redaction engine, trained on specific healthcare
+                        data patterns, to automatically identify and burn-in redactions for SSNs, medical IDs, and
+                        patient names. A secondary QC layer of human reviewers validated the high-risk outliers.</p>
+
+                    <blockquote
+                        style="border-left: 4px solid var(--accent); padding: 20px 30px; background: var(--surface); margin: 40px 0; border-radius: 0 8px 8px 0; font-style: italic;">
+                        "LexSupport's AI redaction tool saved us months of manual work and ensured that we remained in
+                        full compliance with HIPAA regulations during a very stressful production window."
+                        <footer
+                            style="margin-top:15px; color: var(--accent); font-weight: 700; font-style: normal; font-size: 0.9rem;">
+                            — Chief Privacy Officer</footer>
                     </blockquote>
 
                     <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">
-                        <a href="case-studies.html" style="color: var(--accent); font-weight: 700;"><i class="ri-arrow-left-line"></i> Back to Case Studies</a>
+                        <a href="case-studies.html" style="color: var(--accent); font-weight: 700;"><i
+                                class="ri-arrow-left-line"></i> Back to Case Studies</a>
                     </div>
                 </div>
             </div>
@@ -97,7 +129,8 @@
                     <a href="index.html" class="footer-logo brand-logo">
                         <i class="ri-shield-check-line"></i> Lex<span>Support</span>
                     </a>
-                    <p>Enterprise-grade e-discovery consulting for high-stakes litigation. We bring technical credibility to the legal workflow.</p>
+                    <p>Enterprise-grade e-discovery consulting for high-stakes litigation. We bring technical
+                        credibility to the legal workflow.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="ri-linkedin-box-fill"></i></a>
                         <a href="#" class="social-link"><i class="ri-twitter-x-fill"></i></a>
@@ -141,14 +174,9 @@
         </div>
     </footer>
 
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/rtl-toggle.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
