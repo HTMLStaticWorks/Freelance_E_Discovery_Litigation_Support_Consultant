@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -7,7 +8,9 @@
     <title>Custodial Data Management | LexSupport Consulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -25,6 +28,7 @@
             min-height: 100vh;
             padding-top: var(--header-height);
         }
+
         .dashboard-sidebar {
             width: 280px;
             background: var(--surface);
@@ -37,20 +41,24 @@
             display: flex;
             flex-direction: column;
         }
+
         .sidebar-nav {
             flex: 1;
             display: flex;
             flex-direction: column;
         }
+
         .dashboard-content {
             flex: 1;
             margin-left: 280px;
             padding: 40px;
             background: var(--background);
         }
+
         .sidebar-nav li {
             margin-bottom: 5px;
         }
+
         .sidebar-link {
             display: flex;
             align-items: center;
@@ -62,26 +70,32 @@
             transition: var(--transition);
             text-decoration: none;
         }
-        .sidebar-link:hover, .sidebar-link.active {
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
             background: rgba(37, 99, 235, 0.05);
             color: var(--accent);
         }
+
         .sidebar-link.logout-link {
             margin-top: auto;
             color: #ef4444;
             border: 1px solid transparent;
         }
+
         .sidebar-link.logout-link:hover {
             background: rgba(239, 68, 68, 0.05);
             border-color: rgba(239, 68, 68, 0.1);
             color: #dc2626;
         }
+
         .stat-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
         }
+
         .upload-zone {
             border: 2px dashed var(--border);
             border-radius: 12px;
@@ -91,10 +105,12 @@
             cursor: pointer;
             transition: var(--transition);
         }
+
         .upload-zone:hover {
             border-color: var(--accent);
             background: rgba(37, 99, 235, 0.02);
         }
+
         .custodian-card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -102,28 +118,99 @@
             padding: 20px;
             margin-bottom: 20px;
         }
+
         .status-badge {
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
         }
-        .status-success { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
-        .status-warning { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
 
-        .admin-profile { display: flex; align-items: center; gap: 12px; padding: 5px 8px; border-radius: 30px; background: rgba(37, 99, 235, 0.05); border: 1px solid var(--border); cursor: pointer; transition: var(--transition); } .admin-profile:hover { background: rgba(37, 99, 235, 0.1); border-color: var(--accent); } .admin-info { text-align: right; line-height: 1.2; } .admin-name { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-primary); } .admin-role { display: block; font-size: 0.7rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px; } .admin-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; } @media (max-width: 576px) { .admin-info { display: none; } } @media (max-width: 1024px) {
+        .status-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+
+        .status-warning {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
+        .admin-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 5px 8px;
+            border-radius: 30px;
+            background: rgba(37, 99, 235, 0.05);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .admin-profile:hover {
+            background: rgba(37, 99, 235, 0.1);
+            border-color: var(--accent);
+        }
+
+        .admin-info {
+            text-align: right;
+            line-height: 1.2;
+        }
+
+        .admin-name {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .admin-role {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .admin-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 576px) {
+            .admin-info {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1024px) {
             .dashboard-sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
+
             .dashboard-sidebar.active {
                 transform: translateX(0);
             }
-            .dashboard-content { margin-left: 0; padding: 20px; width: 100%; overflow-x: hidden;
+
+            .dashboard-content {
+                margin-left: 0;
+                padding: 20px;
+                width: 100%;
+                overflow-x: hidden;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -132,7 +219,12 @@
             <i class="ri-shield-check-line"></i> Lex<span>Support</span>
         </a>
         <div class="nav-actions">
-            <div class="admin-profile"><div class="admin-info"><span class="admin-name">Admin User</span><span class="admin-role">Firm Manager</span></div><div class="admin-avatar"><i class="ri-user-settings-line"></i></div></div><div class="mobile-toggle" id="dashboard-sidebar-toggle">
+            <div class="admin-profile">
+                <div class="admin-info"><span class="admin-name">Admin User</span><span class="admin-role">Firm
+                        Manager</span></div>
+                <div class="admin-avatar"><i class="ri-user-settings-line"></i></div>
+            </div>
+            <div class="mobile-toggle" id="dashboard-sidebar-toggle">
                 <i class="ri-menu-line"></i>
             </div>
         </div>
@@ -143,11 +235,16 @@
         <aside class="dashboard-sidebar">
             <ul class="sidebar-nav">
                 <li><a href="dashboard.html" class="sidebar-link"><i class="ri-dashboard-3-line"></i> Overview</a></li>
-                <li><a href="dashboard-custodial.html" class="sidebar-link active"><i class="ri-folder-upload-line"></i> Custodial Data</a></li>
-                <li><a href="dashboard-search.html" class="sidebar-link"><i class="ri-search-eye-line"></i> Search Terms</a></li>
-                <li><a href="dashboard-review.html" class="sidebar-link"><i class="ri-task-line"></i> Review Progress</a></li>
-                <li><a href="dashboard-production.html" class="sidebar-link"><i class="ri-file-shield-2-line"></i> Production Sets</a></li>
-                <li style="margin-top: auto; padding-top: 20px;"><a href="login.html" class="sidebar-link logout-link"><i class="ri-logout-box-line"></i> Logout</a></li>
+                <li><a href="dashboard-custodial.html" class="sidebar-link active"><i class="ri-folder-upload-line"></i>
+                        Custodial Data</a></li>
+                <li><a href="dashboard-search.html" class="sidebar-link"><i class="ri-search-eye-line"></i> Search
+                        Terms</a></li>
+                <li><a href="dashboard-review.html" class="sidebar-link"><i class="ri-task-line"></i> Review
+                        Progress</a></li>
+                <li><a href="dashboard-production.html" class="sidebar-link"><i class="ri-file-shield-2-line"></i>
+                        Production Sets</a></li>
+                <li style="margin-top: auto; padding-top: 20px;"><a href="login.html"
+                        class="sidebar-link logout-link"><i class="ri-logout-box-line"></i> Logout</a></li>
             </ul>
         </aside>
 
@@ -159,16 +256,19 @@
                     <h2 class="mb-0">Custodial Data Intake</h2>
                 </div>
                 <div class="col-md-auto ms-auto">
-                    <div class="btn btn-primary d-flex align-items-center gap-2"><i class="ri-add-line"></i> Register New Custodian</div>
+                    <div class="btn btn-primary d-flex align-items-center gap-2"><i class="ri-add-line"></i> Register
+                        New Custodian</div>
                 </div>
             </div>
 
             <!-- Upload Section -->
             <section class="mb-5">
                 <div class="upload-zone">
-                    <i class="ri-cloud-upload-line" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px; display: block;"></i>
+                    <i class="ri-cloud-upload-line"
+                        style="font-size: 3rem; color: var(--accent); margin-bottom: 20px; display: block;"></i>
                     <h5>Upload Forensic Evidence</h5>
-                    <p style="color: var(--secondary);">Drag and drop forensic images (.E01, .L01) or encrypted archives.</p>
+                    <p style="color: var(--secondary);">Drag and drop forensic images (.E01, .L01) or encrypted
+                        archives.</p>
                     <button class="btn btn-primary mt-3">Browse File System</button>
                 </div>
             </section>
@@ -181,11 +281,13 @@
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <div>
                                 <h6 class="mb-1">John Smith (CFO)</h6>
-                                <p style="font-size: 0.85rem; color: var(--secondary);">NY Office • Financial Archives</p>
+                                <p style="font-size: 0.85rem; color: var(--secondary);">NY Office • Financial Archives
+                                </p>
                             </div>
                             <span class="status-badge status-success">Processing</span>
                         </div>
-                        <div style="font-size: 0.85rem; display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <div
+                            style="font-size: 0.85rem; display: flex; justify-content: space-between; margin-bottom: 8px;">
                             <span>Data Volume: 450 GB</span>
                             <span>85% Indexed</span>
                         </div>
@@ -203,7 +305,8 @@
                             </div>
                             <span class="status-badge status-warning">Awaiting Collection</span>
                         </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Collection agent scheduled for remote acquisition on May 15.</p>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Collection agent scheduled for
+                            remote acquisition on May 15.</p>
                     </div>
                 </div>
             </div>
@@ -224,14 +327,5 @@
         }
     </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-

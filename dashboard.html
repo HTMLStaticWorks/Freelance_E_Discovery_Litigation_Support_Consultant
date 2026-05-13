@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -7,7 +8,9 @@
     <title>Law Firm Dashboard | LexSupport Consulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -26,6 +29,7 @@
             min-height: 100vh;
             padding-top: var(--header-height);
         }
+
         .dashboard-sidebar {
             width: 280px;
             background: var(--surface);
@@ -38,20 +42,24 @@
             display: flex;
             flex-direction: column;
         }
+
         .sidebar-nav {
             flex: 1;
             display: flex;
             flex-direction: column;
         }
+
         .dashboard-content {
             flex: 1;
             margin-left: 280px;
             padding: 40px;
             background: var(--background);
         }
+
         .sidebar-nav li {
             margin-bottom: 5px;
         }
+
         .sidebar-link {
             display: flex;
             align-items: center;
@@ -63,26 +71,32 @@
             transition: var(--transition);
             text-decoration: none;
         }
-        .sidebar-link:hover, .sidebar-link.active {
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
             background: rgba(37, 99, 235, 0.05);
             color: var(--accent);
         }
+
         .sidebar-link.logout-link {
             margin-top: auto;
             color: #ef4444;
             border: 1px solid transparent;
         }
+
         .sidebar-link.logout-link:hover {
             background: rgba(239, 68, 68, 0.05);
             border-color: rgba(239, 68, 68, 0.1);
             color: #dc2626;
         }
+
         .stat-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
         }
+
         .progress-bar {
             height: 8px;
             background: var(--border);
@@ -90,16 +104,19 @@
             overflow: hidden;
             margin: 10px 0;
         }
+
         .progress-fill {
             height: 100%;
             background: var(--accent);
             border-radius: 4px;
         }
+
         .data-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
+
         .data-table th {
             text-align: left;
             padding: 12px 16px;
@@ -109,20 +126,30 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
         .data-table td {
             padding: 16px;
             border-bottom: 1px solid var(--border);
             font-size: 0.95rem;
         }
+
         .status-badge {
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
         }
-        .status-success { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
-        .status-warning { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
-        
+
+        .status-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+
+        .status-warning {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
         .upload-zone {
             border: 2px dashed var(--border);
             border-radius: 12px;
@@ -132,24 +159,87 @@
             cursor: pointer;
             transition: var(--transition);
         }
+
         .upload-zone:hover {
             border-color: var(--accent);
             background: rgba(37, 99, 235, 0.02);
         }
 
-        .admin-profile { display: flex; align-items: center; gap: 12px; padding: 5px 8px; border-radius: 30px; background: rgba(37, 99, 235, 0.05); border: 1px solid var(--border); cursor: pointer; transition: var(--transition); } .admin-profile:hover { background: rgba(37, 99, 235, 0.1); border-color: var(--accent); } .admin-info { text-align: right; line-height: 1.2; } .admin-name { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-primary); } .admin-role { display: block; font-size: 0.7rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px; } .admin-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; } @media (max-width: 576px) { .admin-info { display: none; } } @media (max-width: 1024px) {
+        .admin-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 5px 8px;
+            border-radius: 30px;
+            background: rgba(37, 99, 235, 0.05);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .admin-profile:hover {
+            background: rgba(37, 99, 235, 0.1);
+            border-color: var(--accent);
+        }
+
+        .admin-info {
+            text-align: right;
+            line-height: 1.2;
+        }
+
+        .admin-name {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .admin-role {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .admin-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 576px) {
+            .admin-info {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1024px) {
             .dashboard-sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
+
             .dashboard-sidebar.active {
                 transform: translateX(0);
             }
-            .dashboard-content { margin-left: 0; padding: 20px; width: 100%; overflow-x: hidden;
+
+            .dashboard-content {
+                margin-left: 0;
+                padding: 20px;
+                width: 100%;
+                overflow-x: hidden;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -157,11 +247,13 @@
         <a href="index.html" class="nav-logo brand-logo">
             <i class="ri-shield-check-line"></i> Lex<span>Support</span>
         </a>
-        
+
 
         <div class="nav-actions">
-            <button class="theme-toggle js-theme-toggle" style="margin-right: 10px;"><i class="ri-moon-line"></i></button>
-            <button class="theme-toggle js-rtl-toggle" title="Toggle RTL" style="margin-right: 15px;"><span style="font-size: 0.7rem; font-weight: 800;">RTL</span></button>
+            <button class="theme-toggle js-theme-toggle" style="margin-right: 10px;"><i
+                    class="ri-moon-line"></i></button>
+            <button class="theme-toggle js-rtl-toggle" title="Toggle RTL" style="margin-right: 15px;"><span
+                    style="font-size: 0.7rem; font-weight: 800;">RTL</span></button>
             <div class="admin-profile">
                 <div class="admin-info">
                     <span class="admin-name">Admin User</span>
@@ -181,12 +273,18 @@
         <!-- Sidebar -->
         <aside class="dashboard-sidebar">
             <ul class="sidebar-nav">
-                <li><a href="dashboard.html" class="sidebar-link active"><i class="ri-dashboard-3-line"></i> Overview</a></li>
-                <li><a href="dashboard-custodial.html" class="sidebar-link"><i class="ri-folder-upload-line"></i> Custodial Data</a></li>
-                <li><a href="dashboard-search.html" class="sidebar-link"><i class="ri-search-eye-line"></i> Search Terms</a></li>
-                <li><a href="dashboard-review.html" class="sidebar-link"><i class="ri-task-line"></i> Review Progress</a></li>
-                <li><a href="dashboard-production.html" class="sidebar-link"><i class="ri-file-shield-2-line"></i> Production Sets</a></li>
-                <li style="margin-top: auto; padding-top: 20px;"><a href="login.html" class="sidebar-link logout-link"><i class="ri-logout-box-line"></i> Logout</a></li>
+                <li><a href="dashboard.html" class="sidebar-link active"><i class="ri-dashboard-3-line"></i>
+                        Overview</a></li>
+                <li><a href="dashboard-custodial.html" class="sidebar-link"><i class="ri-folder-upload-line"></i>
+                        Custodial Data</a></li>
+                <li><a href="dashboard-search.html" class="sidebar-link"><i class="ri-search-eye-line"></i> Search
+                        Terms</a></li>
+                <li><a href="dashboard-review.html" class="sidebar-link"><i class="ri-task-line"></i> Review
+                        Progress</a></li>
+                <li><a href="dashboard-production.html" class="sidebar-link"><i class="ri-file-shield-2-line"></i>
+                        Production Sets</a></li>
+                <li style="margin-top: auto; padding-top: 20px;"><a href="login.html"
+                        class="sidebar-link logout-link"><i class="ri-logout-box-line"></i> Logout</a></li>
             </ul>
         </aside>
 
@@ -194,8 +292,10 @@
         <main class="dashboard-content">
             <div id="overview">
                 <div style="margin-bottom: 30px;">
-                    <h4 style="font-weight: 500; color: var(--secondary);">Good morning, <span style="color: var(--accent); font-weight: 700;">Admin User</span></h4>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Here is what's happening with your cases today.</p>
+                    <h4 style="font-weight: 500; color: var(--secondary);">Good morning, <span
+                            style="color: var(--accent); font-weight: 700;">Admin User</span></h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Here is what's happening with your cases
+                        today.</p>
                 </div>
                 <div class="row align-items-center g-4 mb-5">
                     <div class="col-md-auto">
@@ -203,7 +303,8 @@
                         <h2 class="mb-0">Case Management Portal</h2>
                     </div>
                     <div class="col-md-auto ms-auto">
-                        <div class="btn btn-primary d-flex align-items-center gap-2"><i class="ri-add-line"></i> New Discovery Project</div>
+                        <div class="btn btn-primary d-flex align-items-center gap-2"><i class="ri-add-line"></i> New
+                            Discovery Project</div>
                     </div>
                 </div>
                 <div class="row g-4 mb-5">
@@ -211,7 +312,8 @@
                         <div class="stat-card">
                             <span style="color: var(--secondary); font-size: 0.9rem;">Total Data Volume</span>
                             <h3 class="my-2">4.2 TB</h3>
-                            <span style="color: #22c55e; font-size: 0.85rem;"><i class="ri-arrow-up-line"></i> 12% this month</span>
+                            <span style="color: #22c55e; font-size: 0.85rem;"><i class="ri-arrow-up-line"></i> 12% this
+                                month</span>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -225,7 +327,9 @@
                         <div class="stat-card">
                             <span style="color: var(--secondary); font-size: 0.9rem;">Review Progress</span>
                             <h3 class="my-2">68%</h3>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 68%;"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 68%;"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -242,36 +346,38 @@
                     <div class="col-lg-8">
                         <section class="stat-card" style="height: 100%;">
                             <h4 class="mb-4">Recent System Activity</h4>
-                            <div style="overflow-x: auto;"><table class="data-table">
-                                <thead>
-                                    <tr>
-                                        <th>Action</th>
-                                        <th>Case Reference</th>
-                                        <th>Time</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Forensic Upload</td>
-                                        <td>Smith v. TechCorp</td>
-                                        <td>2 mins ago</td>
-                                        <td><span class="status-badge status-success">Verified</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Keyword Search</td>
-                                        <td>Global Logistics IP</td>
-                                        <td>1 hour ago</td>
-                                        <td><span class="status-badge status-success">Complete</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Production Export</td>
-                                        <td>Smith v. TechCorp</td>
-                                        <td>4 hours ago</td>
-                                        <td><span class="status-badge status-warning">In Progress</span></td>
-                                    </tr>
-                                </tbody>
-                            </table></div>
+                            <div style="overflow-x: auto;">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Action</th>
+                                            <th>Case Reference</th>
+                                            <th>Time</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Forensic Upload</td>
+                                            <td>Smith v. TechCorp</td>
+                                            <td>2 mins ago</td>
+                                            <td><span class="status-badge status-success">Verified</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Keyword Search</td>
+                                            <td>Global Logistics IP</td>
+                                            <td>1 hour ago</td>
+                                            <td><span class="status-badge status-success">Complete</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Production Export</td>
+                                            <td>Smith v. TechCorp</td>
+                                            <td>4 hours ago</td>
+                                            <td><span class="status-badge status-warning">In Progress</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </section>
                     </div>
                     <div class="col-lg-4">
@@ -279,14 +385,16 @@
                             <h4 class="mb-4">Operational Status</h4>
                             <div style="display: flex; flex-direction: column; gap: 20px;">
                                 <div class="d-flex gap-3">
-                                    <i class="ri-hard-drive-2-line" style="font-size: 1.5rem; color: var(--accent);"></i>
+                                    <i class="ri-hard-drive-2-line"
+                                        style="font-size: 1.5rem; color: var(--accent);"></i>
                                     <div>
                                         <h6 class="mb-1">Primary Storage</h6>
                                         <p style="font-size: 0.8rem; color: var(--secondary);">75% Capacity Reached</p>
                                     </div>
                                 </div>
                                 <div class="d-flex gap-3">
-                                    <i class="ri-shield-keyhole-line" style="font-size: 1.5rem; color: var(--accent);"></i>
+                                    <i class="ri-shield-keyhole-line"
+                                        style="font-size: 1.5rem; color: var(--accent);"></i>
                                     <div>
                                         <h6 class="mb-1">Encryption Engine</h6>
                                         <p style="font-size: 0.8rem; color: var(--secondary);">AES-256 Active</p>
@@ -309,7 +417,7 @@
             link.addEventListener('click', () => {
                 document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
-                
+
                 // Close sidebar on mobile after clicking a link
                 if (window.innerWidth <= 1024) {
                     document.querySelector('.dashboard-sidebar').classList.remove('active');
@@ -320,7 +428,7 @@
         // Mobile Dashboard Sidebar Toggle
         const dashboardToggle = document.getElementById('dashboard-sidebar-toggle');
         const sidebar = document.querySelector('.dashboard-sidebar');
-        
+
         if (dashboardToggle && sidebar) {
             dashboardToggle.addEventListener('click', () => {
                 sidebar.classList.toggle('active');
@@ -328,20 +436,5 @@
         }
     </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
