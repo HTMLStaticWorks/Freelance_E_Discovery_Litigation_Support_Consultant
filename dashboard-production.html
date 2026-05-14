@@ -179,6 +179,14 @@
         }
 
         @media (max-width: 1024px) {
+            .mobile-toggle {
+                display: flex !important;
+            }
+
+            .admin-info {
+                display: none;
+            }
+
             .dashboard-sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
@@ -237,7 +245,7 @@
 
         <!-- Main Content -->
         <main class="dashboard-content">
-            <div class="row align-items-center g-4 mb-5">
+            <div class="row align-items-center g-4" style="margin-bottom: 60px;">
                 <div class="col-md-auto">
                     <span class="hero-tag">Production & Export</span>
                     <h2 class="mb-0">Production Sets Archive</h2>

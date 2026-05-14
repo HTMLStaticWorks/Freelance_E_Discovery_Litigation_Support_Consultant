@@ -192,6 +192,14 @@
         }
 
         @media (max-width: 1024px) {
+            .mobile-toggle {
+                display: flex !important;
+            }
+
+            .admin-info {
+                display: none;
+            }
+
             .dashboard-sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
@@ -250,7 +258,7 @@
 
         <!-- Main Content -->
         <main class="dashboard-content">
-            <div class="row align-items-center g-4 mb-5">
+            <div class="row align-items-center g-4" style="margin-bottom: 60px;">
                 <div class="col-md-auto">
                     <span class="hero-tag">Litigation Support</span>
                     <h2 class="mb-0">Custodial Data Intake</h2>
@@ -262,7 +270,7 @@
             </div>
 
             <!-- Upload Section -->
-            <section class="mb-5">
+            <section style="margin-bottom: 60px;">
                 <div class="upload-zone">
                     <i class="ri-cloud-upload-line"
                         style="font-size: 3rem; color: var(--accent); margin-bottom: 20px; display: block;"></i>
