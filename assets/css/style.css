@@ -279,6 +279,19 @@ img {
     max-width: 600px;
 }
 
+.hero-cta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+    .hero-cta {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
 .hero-image-container {
     position: relative;
 }
@@ -483,6 +496,8 @@ footer {
         z-index: 999;
         overflow-y: auto;
         display: flex;
+        align-items: center;
+        text-align: center;
     }
 
     .nav-links.active {
@@ -528,7 +543,11 @@ footer {
     }
 
     .mobile-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
     }
 
     .dropdown-menu {
@@ -662,6 +681,17 @@ footer {
     justify-content: flex-start !important;
 }
 
+/* Centering fix for specific sections on Tablet & 1024px view */
+@media (max-width: 1199px) {
+
+    .infrastructure-section .row.justify-content-center,
+    .eca-matters-section .row.justify-content-center,
+    .analytics-section .row.justify-content-center,
+    .precision-section .row.justify-content-center {
+        justify-content: center !important;
+    }
+}
+
 @media (max-width: 576px) {
     .container {
         width: 100%;
@@ -703,11 +733,17 @@ footer {
     /* Except for small groups like auth-actions or theme toggles */
     .auth-actions,
     .nav-actions,
-    .nav-actions-mobile,
-    .testimonial-author,
-    .star-rating,
-    .no-stack {
+    div[style*="display: flex"].star-rating {
         flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    div[style*="display: flex"].testimonial-author,
+    div[style*="display: flex"].no-stack {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
     }
 
     div[style*="gap: 60px"] {
